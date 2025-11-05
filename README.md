@@ -31,9 +31,9 @@ French-Learning-App/
 
 🚀 How to Use
 
-Clone / Download the project
+Click on the Link for Live demo 
+https://comforting-khapse-3006a8.netlify.app/
 
-Open index.html in a browser
 
 Click on alphabets, numbers, or colors to hear pronunciation
 
