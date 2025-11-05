@@ -24,6 +24,10 @@ French-Learning-App/
 │── index.html
 │── style.css
 │── script.js
+│── /assets
+│   ├── audio/
+│   └── images/
+└── README.md
 
 🚀 How to Use
 
