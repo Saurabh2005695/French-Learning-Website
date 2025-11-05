@@ -47,9 +47,7 @@ Build strong pronunciation, word memory & spelling
 
 Provide a fun learning experience for students
 
-📸 Screenshots
-
-Add your screenshots below this section
+![ezgif-711d3a49590cc9](https://github.com/user-attachments/assets/c68dcfef-e6e1-495f-8f42-1d9093771711)
 
 📚 Future Improvements
 
