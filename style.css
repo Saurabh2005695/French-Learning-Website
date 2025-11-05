@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, 
+        rgba(0, 35, 149, 0.1) 0%,
+        rgba(255, 255, 255, 0.9) 50%,
+        rgba(237, 41, 57, 0.1) 100%
+    );
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/2560px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png');
+    background-size: cover;
+    opacity: 0.1;
+}
+
+header {
+    background: linear-gradient(45deg, 
+        #002395 0%, 
+        #002395 33%, 
+        #ffffff 33%, 
+        #ffffff 66%, 
+        #ED2939 66%, 
+        #ED2939 100%
+    );
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+nav button {
+    background-color: #002395;
+    color: white;
+    border: 2px solid #ffffff;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+nav button:hover {
+    background-color: #ED2939;
+    transform: scale(1.05);
+}
+
+.hero {
+    height:200px;
+    position:relative;
+    overflow:hidden;
+}
+.eiffel { height:180px; position:absolute; left:0; bottom:0; }
+.city { height:150px; position:absolute; right:0; bottom:0; opacity:.8; }
+.cloud { width:120px; position:absolute; top:20px; animation:move 12s linear infinite; opacity:0.8; }
+.cloud1 { left:-150px; animation-delay:0s; }
+.cloud2 { left:-200px; animation-delay:4s; }
+@keyframes move { from{left:-200px;} to{left:110%;} }
+
+.section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.section { padding:15px; }
+.hidden { display:none; }
+
+.grid {
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    gap:8px;
+}
+.grid div {
+    background:white;
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #ddd;
+    cursor:pointer;
+    transition:.2s;
+}
+.grid div:hover { transform:scale(1.1); background:#ffecf0; }
+
+.color {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin: 10px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.color:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.red { background-color: #ff4d4d; color: white; }
+.blue { background-color: #4d4dff; color: white; }
+.green { background-color: #4dff4d; color: black; }
+.yellow { background-color: #ffff4d; color: black; }
+.black { background-color: #000000; color: white; }
+.white { background-color: #ffffff; color: black; border: 2px solid #ddd; }
+.gray { background-color: #808080; color: white; }
+.orange { background-color: #ffa500; color: black; }
+.purple { background-color: #800080; color: white; }
+.pink { background-color: #ff69b4; color: white; }
+.brown { background-color: #8b4513; color: white; }
+.beige { background-color: #f5f5dc; color: black; border: 1px solid #ddd; }
+
+/* Grid layout for colors */
+#colors .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width:300px;
+    height:150px;
+    margin:10px auto;
+    background:white;
+    border-radius:10px;
+    border:2px solid #002395;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+}
+footer {
+    background: linear-gradient(45deg, #002395, #ffffff, #ED2939);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.color-box {
+    position: relative;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #333;
+}
+
+.color-box:hover {
+    transform: scale(1.05);
+}
+
+.color-text {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* For dark background colors */
+.color-box[style*="background-color: #000000"] .color-text,
+.color-box[style*="background-color: #800080"] .color-text,
+.color-box[style*="background-color: #8b4513"] .color-text {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+}

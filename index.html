@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn French For Beginners 🇫🇷</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>🇫🇷 Learn French — Beginner Course</h1>
+    <p>Alphabets • Numbers • Colors • Greetings • Flashcards • Quiz</p>
+</header>
+
+
+<nav>
+    <button onclick="showSection('alphabets')">Alphabets</button>
+    <button onclick="showSection('numbers')">Numbers</button>
+    <button onclick="showSection('colors')">Colors</button>
+    <button onclick="showSection('greetings')">Greetings</button>
+    <button onclick="showSection('flashcards')">Flashcards</button>
+    <button onclick="showSection('quiz')">Quiz</button>
+</nav>
+
+<!-- Alphabets -->
+<section id="alphabets" class="section">
+    <h2>French Alphabets 🇫🇷</h2>
+    <div class="grid">
+        <div onclick="speak('a')">A — ah</div> <div onclick="speak('b')">B — bay</div>
+        <div onclick="speak('c')">C — say</div> <div onclick="speak('d')">D — day</div>
+        <div onclick="speak('e')">E — uh</div> <div onclick="speak('f')">F — eff</div>
+        <div onclick="speak('g')">G — zhay</div> <div onclick="speak('h')">H — ahsh</div>
+        <div onclick="speak('i')">I — ee</div> <div onclick="speak('j')">J — zhee</div>
+        <div onclick="speak('k')">K — kah</div> <div onclick="speak('l')">L — ell</div>
+        <div onclick="speak('m')">M — emm</div> <div onclick="speak('n')">N — enn</div>
+        <div onclick="speak('o')">O — oh</div> <div onclick="speak('p')">P — pay</div>
+        <div onclick="speak('q')">Q — kew</div> <div onclick="speak('r')">R — err</div>
+        <div onclick="speak('s')">S — ess</div> <div onclick="speak('t')">T — tay</div>
+        <div onclick="speak('u')">U — ew</div> <div onclick="speak('v')">V — vay</div>
+        <div onclick="speak('w')">W — doobluh-vay</div>
+        <div onclick="speak('x')">X — eeks</div>
+        <div onclick="speak('y')">Y — ee-grek</div>
+        <div onclick="speak('z')">Z — zed</div>
+    </div>
+</section>
+
+<!-- Numbers -->
+<section id="numbers" class="section hidden">
+    <h2>French Numbers 🔢</h2>
+    <div class="grid">
+        <div onclick="speak('un')">1 — un</div> <div onclick="speak('deux')">2 — deux</div>
+        <div onclick="speak('trois')">3 — trois</div> <div onclick="speak('quatre')">4 — quatre</div>
+        <div onclick="speak('cinq')">5 — cinq</div> <div onclick="speak('six')">6 — six</div>
+        <div onclick="speak('sept')">7 — sept</div> <div onclick="speak('huit')">8 — huit</div>
+        <div onclick="speak('neuf')">9 — neuf</div> <div onclick="speak('dix')">10 — dix</div>
+        <div onclick="speak('onze')">11 — onze</div> <div onclick="speak('douze')">12 — douze</div>
+        <div onclick="speak('treize')">13 — treize</div> <div onclick="speak('quatorze')">14 — quatorze</div>
+        <div onclick="speak('quinze')">15 — quinze</div> <div onclick="speak('seize')">16 — seize</div>
+        <div onclick="speak('dix sept')">17 — dix-sept</div>
+        <div onclick="speak('dix huit')">18 — dix-huit</div>
+        <div onclick="speak('dix neuf')">19 — dix-neuf</div>
+        <div onclick="speak('vingt')">20 — vingt</div>
+    </div>
+</section>
+
+<!-- Colors -->
+<section id="colors" class="section hidden">
+    <h2>Colors 🎨</h2>
+    <div class="grid">
+        <div onclick="speak('rouge')" class="color-box" style="background-color: #ff0000;">
+            <span class="color-text">rouge — red</span>
+        </div>
+        <div onclick="speak('bleu')" class="color-box" style="background-color: #0000ff;">
+            <span class="color-text">bleu — blue</span>
+        </div>
+        <div onclick="speak('vert')" class="color-box" style="background-color: #00ff00;">
+            <span class="color-text">vert — green</span>
+        </div>
+        <div onclick="speak('jaune')" class="color-box" style="background-color: #ffff00;">
+            <span class="color-text">jaune — yellow</span>
+        </div>
+        <div onclick="speak('noir')" class="color-box" style="background-color: #000000;">
+            <span class="color-text">noir — black</span>
+        </div>
+        <div onclick="speak('blanc')" class="color-box" style="background-color: #ffffff;">
+            <span class="color-text">blanc — white</span>
+        </div>
+        <div onclick="speak('gris')" class="color-box" style="background-color: #808080;">
+            <span class="color-text">gris — gray</span>
+        </div>
+        <div onclick="speak('orange')" class="color-box" style="background-color: #ffa500;">
+            <span class="color-text">orange — orange</span>
+        </div>
+        <div onclick="speak('violet')" class="color-box" style="background-color: #800080;">
+            <span class="color-text">violet — purple</span>
+        </div>
+        <div onclick="speak('rose')" class="color-box" style="background-color: #ffc0cb;">
+            <span class="color-text">rose — pink</span>
+        </div>
+        <div onclick="speak('marron')" class="color-box" style="background-color: #8b4513;">
+            <span class="color-text">marron — brown</span>
+        </div>
+        <div onclick="speak('beige')" class="color-box" style="background-color: #f5f5dc;">
+            <span class="color-text">beige — beige</span>
+        </div>
+    </div>
+</section>
+
+<!-- Greetings -->
+<section id="greetings" class="section hidden">
+    <h2>Greetings 👋</h2>
+    <ul>
+        <li>Bonjour — Hello <button onclick="speak('Bonjour')">🔊</button></li>
+        <li>Bonsoir — Good evening <button onclick="speak('Bonsoir')">🔊</button></li>
+        <li>Merci — Thank you <button onclick="speak('Merci')">🔊</button></li>
+        <li>Salut — Hi/Bye <button onclick="speak('Salut')">🔊</button></li>
+        <li>Au revoir — Goodbye <button onclick="speak('Au revoir')">🔊</button></li>
+    </ul>
+</section>
+
+<!-- Flashcards -->
+<section id="flashcards" class="section hidden">
+    <h2>Flashcards 🧠</h2>
+    <div id="flashcard" class="card" onclick="flipCard()"></div>
+    <button onclick="prevCard()">⏮</button>
+    <button onclick="speakCard()">🔊</button>
+    <button onclick="nextCard()">⏭</button>
+</section>
+
+<!-- Quiz -->
+<section id="quiz" class="section hidden">
+    <h2>Quiz 📝</h2>
+    <p id="question"></p>
+    <div id="options"></div>
+    <p id="score"></p>
+</section>
+
+<footer>🇫🇷 Vive La France — Made by Saurabh</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
