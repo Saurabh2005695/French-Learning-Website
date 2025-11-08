@@ -1,6 +1,9 @@
 function showSection(id){
     document.querySelectorAll(".section").forEach(s=>s.classList.add("hidden"));
     document.getElementById(id).classList.remove("hidden");
+    if (id === 'quiz') {
+        startQuiz();
+    }
 }
 
 const synth = window.speechSynthesis;
@@ -60,28 +63,132 @@ function prevCard(){i=(i-1+cards.length)%cards.length; front=true; showCard();}
 function speakCard(){speak(cards[i].fr);}
 
 // Quiz
-const quiz=[
-    {q:"Bonjour means?",o:["Hello","Bye","Thanks"],a:"Hello"},
-    {q:"Merci means?",o:["Sorry","Thank you","See you"],a:"Thank you"},
-    {q:"Bleu means?",o:["Yellow","Blue","Green"],a:"Blue"},
+const quizQuestions = [
+    // Number questions
+    {
+        question: "What is 'five' in French?",
+        options: ["quatre", "cinq", "six", "sept"],
+        correct: "cinq"
+    },
+    {
+        question: "How do you say 'ten' in French?",
+        options: ["neuf", "onze", "dix", "douze"],
+        correct: "dix"
+    },
+    {
+        question: "What is 'fifteen' in French?",
+        options: ["quinze", "seize", "quatorze", "treize"],
+        correct: "quinze"
+    },
+    {
+        question: "Translate 'trois' to English:",
+        options: ["two", "three", "four", "five"],
+        correct: "three"
+    },
+    // Alphabet questions
+    {
+        question: "How is the letter 'W' pronounced in French?",
+        options: ["way", "doobluh-vay", "doobluh", "vay"],
+        correct: "doobluh-vay"
+    },
+    {
+        question: "What is the correct pronunciation of 'J' in French?",
+        options: ["jay", "zhee", "jee", "zhay"],
+        correct: "zhee"
+    },
+    {
+        question: "How do you pronounce 'Y' in French?",
+        options: ["ee-grek", "way", "ee", "york"],
+        correct: "ee-grek"
+    },
+    // Mixed questions
+    {
+        question: "What number is 'dix-huit'?",
+        options: ["16", "17", "18", "19"],
+        correct: "18"
+    },
+    {
+        question: "Which letter makes the 'say' sound in French?",
+        options: ["S", "C", "Z", "X"],
+        correct: "C"
+    },
+    {
+        question: "What is 'vingt' in English?",
+        options: ["18", "19", "20", "21"],
+        correct: "20"
+    }
 ];
-let qi=0,score=0;
 
-function loadQuiz(){
-    document.getElementById("question").textContent=quiz[qi].q;
-    const opt=document.getElementById("options");
-    opt.innerHTML="";
-    quiz[qi].o.forEach(x=>{
-        let b=document.createElement("button");
-        b.textContent=x;
-        b.onclick=()=>check(x);
-        opt.appendChild(b);
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    showQuestion();
+}
+
+function showQuestion() {
+    const questionEl = document.getElementById('question');
+    const optionsEl = document.getElementById('options');
+    const scoreEl = document.getElementById('score');
+    
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+    questionEl.textContent = `Question ${currentQuestionIndex + 1}/${quizQuestions.length}: ${currentQuestion.question}`;
+    
+    optionsEl.innerHTML = '';
+    currentQuestion.options.forEach(option => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.className = 'quiz-option';
+        button.onclick = () => checkAnswer(option);
+        optionsEl.appendChild(button);
     });
+    
+    scoreEl.textContent = `Score: ${score}/${quizQuestions.length}`;
 }
-function check(x){
-    if(x==quiz[qi].a) score++;
-    qi++;
-    if(qi<quiz.length) loadQuiz();
-    else document.getElementById("score").textContent=`Score: ${score}/${quiz.length}`;
+
+function checkAnswer(selected) {
+    const current = quizQuestions[currentQuestionIndex];
+    const buttons = document.querySelectorAll('.quiz-option');
+    
+    buttons.forEach(button => {
+        button.disabled = true;
+        if (button.textContent === current.correct) {
+            button.classList.add('correct');
+        } else if (button.textContent === selected) {
+            button.classList.add(selected === current.correct ? 'correct' : 'wrong');
+        }
+    });
+
+    if (selected === current.correct) {
+        score++;
+        speak('Très bien!', 'fr-FR');
+    } else {
+        speak('Non, essayez encore.', 'fr-FR');
+    }
+
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < quizQuestions.length) {
+            showQuestion();
+        } else {
+            endQuiz();
+        }
+    }, 1500);
 }
-loadQuiz();
+
+function endQuiz() {
+    const questionEl = document.getElementById('question');
+    const optionsEl = document.getElementById('options');
+    const scoreEl = document.getElementById('score');
+    
+    questionEl.textContent = "Quiz Complete!";
+    optionsEl.innerHTML = `
+        <p>Final Score: ${score}/${quizQuestions.length}</p>
+        <button onclick="startQuiz()">Try Again</button>
+    `;
+    scoreEl.textContent = `You got ${Math.round((score/quizQuestions.length) * 100)}% correct!`;
+}
+
+//# sourceMappingURL=app.js.map

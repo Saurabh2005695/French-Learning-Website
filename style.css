@@ -197,3 +197,45 @@ footer {
     background-color: rgba(255, 255, 255, 0.9);
     color: #000;
 }
+
+.quiz-option {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #002395;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quiz-option:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+}
+
+.quiz-option.correct {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #45a049;
+}
+
+.quiz-option.wrong {
+    background-color: #f44336;
+    color: white;
+    border-color: #da190b;
+}
+
+#score {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #002395;
+    margin: 20px 0;
+}
+
+#question {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #333;
+}
